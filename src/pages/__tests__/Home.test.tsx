@@ -12,7 +12,7 @@ describe('<Home/>', () => {
     jest.clearAllMocks();
   });
 
-  it('city shoud be added', async () => {
+  it('city should be added', async () => {
     const store = setupStore();
 
     act(() => {

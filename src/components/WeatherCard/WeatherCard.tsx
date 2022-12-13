@@ -10,7 +10,7 @@ import {
   Typography,
 } from '@mui/material/';
 import dayjs from 'dayjs';
-import React from 'react';
+import React, { memo } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import humidityIcon from '../../assets/humidity.png';
@@ -28,14 +28,14 @@ interface PropsCard {
   humidity: number;
 }
 
-export const WeatherCard = ({
+export const WeatherCard = memo(function ({
   name,
   temp,
   imgSlug,
   date,
   windSpeed,
   humidity,
-}: PropsCard) => {
+}: PropsCard) {
   const nav = useNavigate();
   const dispatch = useAppDispatch();
 
@@ -121,4 +121,6 @@ export const WeatherCard = ({
       </CardContent>
     </Card>
   );
-};
+});
+
+WeatherCard.displayName = 'WeatherCard';
