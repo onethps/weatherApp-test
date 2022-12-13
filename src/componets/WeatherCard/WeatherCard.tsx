@@ -15,9 +15,11 @@ import dayjs from 'dayjs';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
+import humidityIcon from '../../assets/humidity.png';
+import windSpeedIcon from '../../assets/wind.png';
+import { useAppDispatch } from '../../hooks/redux-hooks';
 import { updateWeatherInfo } from '../../store/middleware/cities';
 import { removeCityCard } from '../../store/slices/cities';
-import { useAppDispatch } from '../../store/store';
 
 interface PropsCard {
   name: string;
@@ -98,7 +100,7 @@ export const WeatherCard = ({
                 gap: '10px',
               }}
             >
-              <AirIcon width={25} height={25} />
+              <img src={windSpeedIcon} alt={'wind-speed-icon'} width={25} height={25} />
               <Typography variant="body2" color="text.secondary">
                 Wind {windSpeed} m/s
               </Typography>
@@ -111,7 +113,7 @@ export const WeatherCard = ({
                 gap: '10px',
               }}
             >
-              <OpacityIcon width={25} height={25} />
+              <img src={humidityIcon} alt={'humidity-icon'} width={25} height={25} />
               <Typography variant="body2" color="text.secondary">
                 Humidity {humidity} %
               </Typography>

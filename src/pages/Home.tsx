@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 import React from 'react';
 
 import { WeatherCard } from '../componets/WeatherCard/WeatherCard';
+import { useAppDispatch, useAppSelector } from '../hooks/redux-hooks';
 import { SearchSection } from '../sections/SearchSection';
 import { fetchCitiesList } from '../store/middleware/cities';
-import { useAppDispatch, useAppSelector } from '../store/store';
 
 export const Home = () => {
   const cityList = useAppSelector(state => state.home.cityList);

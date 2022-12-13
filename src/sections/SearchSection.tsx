@@ -1,11 +1,11 @@
 import SearchIcon from '@mui/icons-material/Search';
 import LoadingButton from '@mui/lab/LoadingButton';
-import { Alert, Box, Button, Snackbar, TextField, Typography } from '@mui/material';
-import React, { useEffect, useState } from 'react';
+import { Alert, Box, Snackbar, TextField, Typography } from '@mui/material';
+import React, { useState } from 'react';
 
+import { useAppDispatch, useAppSelector } from '../hooks/redux-hooks';
 import { addNewLocation } from '../store/middleware/cities';
 import { setErrorMessage } from '../store/slices/cities';
-import { useAppDispatch, useAppSelector } from '../store/store';
 import { checkDuplicates } from '../utils/utils';
 
 export const SearchSection = () => {

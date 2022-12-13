@@ -11,15 +11,12 @@ import dayjs from 'dayjs';
 import React, { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import pressureIcon from '../assets/gauge.png';
-import humidityIcon from '../assets/humidity.png';
-import visibilityIcon from '../assets/low-visibility.png';
 import sunriseIcon from '../assets/sunrise.png';
 import sunsetIcon from '../assets/sunset.png';
-import windSpeedIcon from '../assets/wind.png';
 import { HighlightCard } from '../componets/HighlightCard/HighlightCard';
+import { useAppDispatch, useAppSelector } from '../hooks/redux-hooks';
 import { getDetailsForecastData } from '../store/middleware/cityDetails';
-import { useAppDispatch, useAppSelector } from '../store/store';
+import { detailsHighLights } from './details.data';
 
 export const Details = () => {
   const dispatch = useAppDispatch();
@@ -49,33 +46,6 @@ export const Details = () => {
       </div>
     );
   }
-
-  const detailsHighLights = [
-    {
-      id: 1,
-      title: 'Wind Speed',
-      data: currentCity.list[0].wind.speed + ' m/s',
-      icon: windSpeedIcon,
-    },
-    {
-      id: 2,
-      title: 'Pressure',
-      data: Math.floor(currentCity.list[0].main.pressure / 1.333) + ' mm',
-      icon: pressureIcon,
-    },
-    {
-      id: 3,
-      title: 'Humidity',
-      data: currentCity.list[0].main.humidity + ' %',
-      icon: humidityIcon,
-    },
-    {
-      id: 4,
-      title: 'Visibility',
-      data: (currentCity.list[0].visibility / 1000).toFixed(2) + ' km',
-      icon: visibilityIcon,
-    },
-  ];
 
   return (
     <Container data-testid="details-component">
@@ -218,7 +188,7 @@ export const Details = () => {
 
           {/* additional info */}
           <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 3 }}>
-            {detailsHighLights.map(({ title, data, icon, id }) => (
+            {detailsHighLights(currentCity).map(({ title, data, icon, id }) => (
               <HighlightCard key={id} title={title} value={data} imgLink={icon} />
             ))}
           </Box>
