@@ -5,7 +5,6 @@ import ReplayIcon from '@mui/icons-material/Replay';
 import {
   Box,
   Card,
-  CardActionArea,
   CardActions,
   CardContent,
   IconButton,
