@@ -3,9 +3,10 @@ import { grey } from '@mui/material/colors';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { RouterProvider } from 'react-router-dom';
+import { BrowserRouter, RouterProvider } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 
+import { App } from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { router } from './routes/routes';
@@ -26,7 +27,7 @@ root.render(
       <PersistGate loading={null} persistor={persistor}>
         <ThemeProvider theme={createTheme(themeLight)}>
           <CssBaseline />
-          <RouterProvider router={router} />
+          <App />
         </ThemeProvider>
       </PersistGate>
     </Provider>

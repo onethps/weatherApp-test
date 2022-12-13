@@ -1,12 +1,15 @@
+import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import { grey } from '@mui/material/colors';
 import { configureStore } from '@reduxjs/toolkit';
 import type { PreloadedState } from '@reduxjs/toolkit';
 import { render } from '@testing-library/react';
 import type { RenderOptions } from '@testing-library/react';
 import React, { PropsWithChildren } from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter, MemoryRouter } from 'react-router-dom';
+import { PersistGate } from 'redux-persist/integration/react';
 
-import { AppStore, RootState, persistedReducer } from '../store/store';
+import { AppStore, RootState, persistedReducer, persistor } from '../store/store';
 
 interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
   preloadedState?: PreloadedState<RootState>;
