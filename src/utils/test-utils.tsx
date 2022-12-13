@@ -1,15 +1,12 @@
-import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
-import { grey } from '@mui/material/colors';
 import { configureStore } from '@reduxjs/toolkit';
 import type { PreloadedState } from '@reduxjs/toolkit';
 import { render } from '@testing-library/react';
 import type { RenderOptions } from '@testing-library/react';
 import React, { PropsWithChildren } from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter, HashRouter, MemoryRouter } from 'react-router-dom';
-import { PersistGate } from 'redux-persist/integration/react';
+import { MemoryRouter } from 'react-router-dom';
 
-import { AppStore, RootState, persistedReducer, persistor } from '../store/store';
+import { AppStore, RootState, persistedReducer } from '../store';
 
 interface ExtendedRenderOptions extends Omit<RenderOptions, 'queries'> {
   preloadedState?: PreloadedState<RootState>;
@@ -28,10 +25,11 @@ export function renderWithProviders(
     ...renderOptions
   }: ExtendedRenderOptions = {},
 ) {
+  // eslint-disable-next-line @typescript-eslint/ban-types
   function Wrapper({ children }: PropsWithChildren<{}>): JSX.Element {
     return (
       <Provider store={store}>
-        <BrowserRouter>{children}</BrowserRouter>
+        <MemoryRouter>{children}</MemoryRouter>
       </Provider>
     );
   }

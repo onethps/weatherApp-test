@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios, { AxiosError } from 'axios';
 
-import { weatherAPI } from '../../services/api/weatherAPI';
-import { CityDetailsData } from './../../types/types';
+import { weatherAPI } from '../../services';
+import { CityDetailsData } from '../../types';
 
 export const DAILY_THREE_HOURS_DATA = 8;
 

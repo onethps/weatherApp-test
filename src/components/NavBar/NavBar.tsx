@@ -10,7 +10,7 @@ import {
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { useAppSelector } from '../../hooks/redux-hooks';
+import { useAppSelector } from '../../hooks';
 
 export const NavBar = () => {
   const loadingCardListStatus = useAppSelector(state => state.home.loading);

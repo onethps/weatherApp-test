@@ -1,8 +1,8 @@
+import { CityDetailsData } from '../../types/types';
 import pressureIcon from '../assets/gauge.png';
 import humidityIcon from '../assets/humidity.png';
 import visibilityIcon from '../assets/low-visibility.png';
 import windSpeedIcon from '../assets/wind.png';
-import { CityDetailsData } from './../types/types';
 
 export const detailsHighLights = (currentCity: CityDetailsData) => [
   {

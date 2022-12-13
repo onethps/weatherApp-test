@@ -3,14 +3,12 @@ import { grey } from '@mui/material/colors';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { BrowserRouter, RouterProvider } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 
-import { App } from './App';
-import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { router } from './routes/routes';
-import { configuredStore, persistor } from './store/store';
+import { appRouters } from './routes';
+import { configuredStore, persistor } from './store';
 
 const themeLight = createTheme({
   palette: {
@@ -27,7 +25,7 @@ root.render(
       <PersistGate loading={null} persistor={persistor}>
         <ThemeProvider theme={createTheme(themeLight)}>
           <CssBaseline />
-          <App />
+          <RouterProvider router={appRouters} />
         </ThemeProvider>
       </PersistGate>
     </Provider>

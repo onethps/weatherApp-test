@@ -3,10 +3,10 @@ import LoadingButton from '@mui/lab/LoadingButton';
 import { Alert, Box, Snackbar, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 
-import { useAppDispatch, useAppSelector } from '../hooks/redux-hooks';
-import { addNewLocation } from '../store/middleware/cities';
-import { setErrorMessage } from '../store/slices/cities';
-import { checkDuplicates } from '../utils/utils';
+import { useAppDispatch, useAppSelector } from '../hooks';
+import { addNewLocation } from '../store/middleware';
+import { setErrorMessage } from '../store/slices';
+import { checkDuplicates } from '../utils';
 
 export const SearchSection = () => {
   const [value, setValue] = useState<string>('');

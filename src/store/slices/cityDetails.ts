@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { CityDetailsData } from './../../types/types';
-import { getDetailsForecastData } from './../middleware/cityDetails';
+import { CityDetailsData } from '../../types';
+import { getDetailsForecastData } from '../middleware';
 
 interface initStateType {
   cityDetails: null | CityDetailsData;

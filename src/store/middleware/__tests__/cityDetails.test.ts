@@ -1,8 +1,8 @@
 import axios, { AxiosResponse } from 'axios';
 import React from 'react';
 
-import { mockDetailsData } from './../../../mock/mockResponse';
-import { getDetailsForecastData } from './../cityDetails';
+import { mockDetailsData } from '../../../mock';
+import { getDetailsForecastData } from '../cityDetails';
 
 jest.mock('axios');
 
@@ -23,6 +23,7 @@ describe('details should be fetched', () => {
     const thunk = getDetailsForecastData({ name: 'Kyiv' });
     const dispatch = jest.fn();
 
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     await thunk(dispatch, () => {}, undefined);
 
     const { calls } = dispatch.mock;
@@ -46,6 +47,7 @@ describe('details should be fetched', () => {
     const thunk = getDetailsForecastData({ name: 'Kyiv' });
     const dispatch = jest.fn();
 
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     await thunk(dispatch, () => {}, undefined);
 
     const { calls } = dispatch.mock;

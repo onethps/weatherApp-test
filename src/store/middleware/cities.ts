@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import axios, { AxiosError } from 'axios';
 
-import { weatherAPI } from '../../services/api/weatherAPI';
+import { weatherAPI } from '../../services';
 import { CityListState } from './../slices/cities';
 
 const initCityList = ['Lviv', 'Kyiv', 'Kharkov'];

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-import { CityListState } from '../../store/slices/cities';
-import { CityDetailsData } from '../../types/types';
+import { CityListState } from '../../store/slices';
+import { CityDetailsData } from '../../types';
 
 export const weatherAPI = {
   fetchCity(city: string) {

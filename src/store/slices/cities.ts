@@ -1,8 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { MainCard } from '../../types/types';
-import { fetchCitiesList, updateWeatherInfo } from '../middleware/cities';
-import { addNewLocation } from './../middleware/cities';
+import { MainCard } from '../../types';
+import { addNewLocation, fetchCitiesList, updateWeatherInfo } from '../middleware';
 
 export interface CityListState extends MainCard {
   id: string;

@@ -1,6 +1,4 @@
-import AirIcon from '@mui/icons-material/Air';
 import CloseIcon from '@mui/icons-material/Close';
-import OpacityIcon from '@mui/icons-material/Opacity';
 import ReplayIcon from '@mui/icons-material/Replay';
 import {
   Box,

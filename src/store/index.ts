@@ -3,15 +3,14 @@ import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import thunk from 'redux-thunk';
 
-import { cityListReducer } from './slices/cities';
-import { detailsReducer } from './slices/cityDetails';
+import { cityListReducer, detailsReducer } from './slices';
 
 const persistConfig = {
   key: 'root',
   storage,
 };
 
-const rootReducer = combineReducers({
+export const rootReducer = combineReducers({
   home: cityListReducer,
   details: detailsReducer,
 });

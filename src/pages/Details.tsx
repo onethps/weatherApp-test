@@ -13,10 +13,10 @@ import { useParams } from 'react-router-dom';
 
 import sunriseIcon from '../assets/sunrise.png';
 import sunsetIcon from '../assets/sunset.png';
-import { HighlightCard } from '../componets/HighlightCard/HighlightCard';
-import { useAppDispatch, useAppSelector } from '../hooks/redux-hooks';
-import { getDetailsForecastData } from '../store/middleware/cityDetails';
-import { detailsHighLights } from './details.data';
+import { HighlightCard } from '../components';
+import { useAppDispatch, useAppSelector } from '../hooks';
+import { getDetailsForecastData } from '../store/middleware';
+import { detailsHighLights } from './data/detailsData';
 
 export const Details = () => {
   const dispatch = useAppDispatch();

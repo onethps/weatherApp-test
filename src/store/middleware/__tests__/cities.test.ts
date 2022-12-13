@@ -1,8 +1,8 @@
 import axios, { AxiosResponse } from 'axios';
 
-import { setupStore } from '../../store';
+import { setupStore } from '../..';
+import { mockCitiesListResponse } from '../../../mock';
 import { fetchCitiesList, updateWeatherInfo } from '../cities';
-import { mockCitiesListResponse } from './../../../mock/mockResponse';
 
 jest.mock('axios');
 

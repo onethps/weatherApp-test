@@ -1,9 +1,9 @@
 import { act } from '@testing-library/react';
 import React from 'react';
 
-import { mockCitiesListResponse } from '../../mock/mockResponse';
+import { mockCitiesListResponse } from '../../mock';
+import { setupStore } from '../../store';
 import { addNewLocation, fetchCitiesList } from '../../store/middleware/cities';
-import { setupStore } from '../../store/store';
 import { renderWithProviders } from '../../utils/test-utils';
 import { Home } from '../Home';
 
@@ -54,7 +54,7 @@ describe('<Home/>', () => {
     };
 
     act(() => {
-      store.dispatch(addNewLocation.fulfilled(payload, 'requestId', { lat: 1, lng: 1 }));
+      store.dispatch(addNewLocation.fulfilled(payload, 'requestId', { name: 'Kyiv' }));
     });
 
     const findCities = await findAllByTestId('city-item');

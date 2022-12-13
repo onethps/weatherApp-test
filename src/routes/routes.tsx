@@ -1,14 +1,14 @@
 import React from 'react';
-import { createBrowserRouter } from 'react-router-dom';
+import { createHashRouter } from 'react-router-dom';
 
+import { App } from '../_app';
 import { Details } from '../pages/Details';
-import { Layout } from './../componets/Layout/Layout';
 import { Home } from './../pages/Home';
 
-export const router = createBrowserRouter([
+export const appRouters = createHashRouter([
   {
     path: '/',
-    element: <Layout />,
+    element: <App />,
     children: [
       {
         path: '/',
