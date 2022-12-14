@@ -1,10 +1,6 @@
-import { cleanup, getByTestId, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 import * as reactRedux from 'react-redux';
-import * as Router from 'react-router-dom';
-import configureMockStore from 'redux-mock-store';
-import thunk from 'redux-thunk';
 
 import { renderWithProviders } from '../../utils/test-utils';
 import { WeatherCard } from '../WeatherCard/WeatherCard';
