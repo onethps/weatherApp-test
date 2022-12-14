@@ -80,13 +80,23 @@ export const SearchSection = () => {
       </Button>
 
       <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
-        <Alert severity="error" onClose={handleClose} sx={{ width: '100%' }}>
+        <Alert
+          variant="filled"
+          severity="error"
+          onClose={handleClose}
+          sx={{ width: '100%' }}
+        >
           Please use at least 3 characters
         </Alert>
       </Snackbar>
 
       <Snackbar open={!!errorMessage} autoHideDuration={6000} onClose={handleClose}>
-        <Alert severity="error" onClose={handleClose} sx={{ width: '100%' }}>
+        <Alert
+          variant="filled"
+          severity="error"
+          onClose={handleClose}
+          sx={{ width: '100%' }}
+        >
           {errorMessage}
         </Alert>
       </Snackbar>

@@ -89,18 +89,4 @@ export const mockDetailsData: CityDetailsData = {
   ],
 };
 
-// {
-//     preloadedState: {
-//         home: {
-//             cityList: [] as CityListState[],
-//             loading:false,
-//             _persist: {
-//                 version: 1,
-//                 rehydrated: false
-//             }
-//         }
-
-//     }
-// }
-
 const placesResponse = [{ city: 'Kyiv' }, { city: 'Lviv' }, { city: 'Amsterdam' }];
