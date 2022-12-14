@@ -21,6 +21,7 @@ import { detailsHighLights } from './data/detailsData';
 export const Details = () => {
   const dispatch = useAppDispatch();
   const currentCity = useAppSelector(state => state.details.cityDetails);
+  const loading = useAppSelector(state => state.details.loading);
 
   const { city } = useParams();
 
@@ -32,9 +33,9 @@ export const Details = () => {
 
   const href = 'http://openweathermap.org/img/wn/';
 
-  if (!currentCity?.city) {
+  if (loading) {
     return (
-      <div
+      <Container
         style={{
           position: 'fixed',
           top: '30%',
@@ -43,7 +44,15 @@ export const Details = () => {
         }}
       >
         <CircularProgress data-testid="loader-element" />
-      </div>
+      </Container>
+    );
+  }
+
+  if (!currentCity) {
+    return (
+      <Container>
+        <Typography variant="h1">Oops Card Details not find</Typography>
+      </Container>
     );
   }
 

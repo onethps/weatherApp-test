@@ -3,6 +3,7 @@ import ReplayIcon from '@mui/icons-material/Replay';
 import {
   Box,
   Card,
+  CardActionArea,
   CardActions,
   CardContent,
   IconButton,
@@ -49,76 +50,83 @@ export const WeatherCard = memo(function ({
 
   return (
     <Card sx={{ width: 250 }}>
-      <CardContent>
-        <Stack direction={'row'} justifyContent="space-between">
-          <Typography
-            noWrap
-            sx={{ maxWidth: '150px' }}
-            gutterBottom
-            variant="h5"
-            component="div"
-          >
-            {name}
-          </Typography>
-          <CardActions sx={{ margin: 0, padding: 0 }}>
-            <IconButton data-testid="update-button" onClick={updateWeatherInfoHandle}>
-              <ReplayIcon />
-            </IconButton>
-            <IconButton data-testid="remove-button" onClick={deleteWeatherCardHandle}>
-              <CloseIcon />
-            </IconButton>
-          </CardActions>
-        </Stack>
-        <Box data-testid="navigate-details" onClick={() => nav(`details/${name}`)}>
-          <Typography variant="body2" color="text.secondary">
-            Last update {dayjs(date).format('HH:mm:ss')}
-          </Typography>
-          <Stack direction="row" sx={{ p: 1 }} alignItems="center">
-            <Typography variant="h2">{Math.ceil(temp)}&deg;</Typography>
+      <CardActionArea>
+        <CardContent>
+          {/* header */}
+          <Stack direction={'row'} justifyContent="space-between">
+            <Typography
+              noWrap
+              sx={{ maxWidth: '150px' }}
+              gutterBottom
+              variant="h5"
+              component="div"
+            >
+              {name}
+            </Typography>
 
-            <img
-              alt={'iconWeather'}
-              width={100}
-              height={100}
-              src={`http://openweathermap.org/img/wn/${imgSlug}@2x.png`}
-            />
+            <CardActions sx={{ margin: 0, padding: 0 }}>
+              <IconButton data-testid="update-button" onClick={updateWeatherInfoHandle}>
+                <ReplayIcon />
+              </IconButton>
+              <IconButton data-testid="remove-button" onClick={deleteWeatherCardHandle}>
+                <CloseIcon />
+              </IconButton>
+            </CardActions>
           </Stack>
-          <Stack
-            direction={'row'}
-            spacing={5}
-            justifyItems={'center'}
-            justifyContent="center"
-          >
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '10px',
-              }}
+
+          {/* main */}
+
+          <Box data-testid="navigate-details" onClick={() => nav(`details/${name}`)}>
+            <Typography variant="body2" color="text.secondary">
+              Last update {dayjs(date).format('HH:mm:ss')}
+            </Typography>
+            <Stack direction="row" sx={{ p: 1 }} alignItems="center">
+              <Typography variant="h2">{Math.ceil(temp)}&deg;</Typography>
+
+              <img
+                alt={'iconWeather'}
+                width={100}
+                height={100}
+                src={`http://openweathermap.org/img/wn/${imgSlug}@2x.png`}
+              />
+            </Stack>
+            <Stack
+              direction={'row'}
+              spacing={5}
+              justifyItems={'center'}
+              justifyContent="center"
             >
-              <img src={windSpeedIcon} alt={'wind-speed-icon'} width={25} height={25} />
-              <Typography fontSize={10} color="text.secondary">
-                Wind {windSpeed} m/s
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                gap: '10px',
-              }}
-            >
-              <img src={humidityIcon} alt={'humidity-icon'} width={25} height={25} />
-              <Typography fontSize={10} color="text.secondary">
-                Humidity {humidity} %
-              </Typography>
-            </Box>
-          </Stack>
-        </Box>
-      </CardContent>
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '10px',
+                }}
+              >
+                <img src={windSpeedIcon} alt={'wind-speed-icon'} width={25} height={25} />
+                <Typography fontSize={10} color="text.secondary">
+                  Wind {windSpeed} m/s
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  gap: '10px',
+                }}
+              >
+                <img src={humidityIcon} alt={'humidity-icon'} width={25} height={25} />
+                <Typography fontSize={10} color="text.secondary">
+                  Humidity {humidity} %
+                </Typography>
+              </Box>
+            </Stack>
+          </Box>
+        </CardContent>
+      </CardActionArea>
     </Card>
   );
 });

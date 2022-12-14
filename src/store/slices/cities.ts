@@ -42,8 +42,8 @@ export const cityListSlice = createSlice({
         state.loading = false;
       })
       .addCase(fetchCitiesList.pending, state => {
-        state.error = '';
         state.loading = true;
+        state.error = '';
       })
       ////////////////
       .addCase(updateWeatherInfo.fulfilled, (state, { payload }) => {
@@ -57,8 +57,8 @@ export const cityListSlice = createSlice({
         state.loading = false;
       })
       .addCase(updateWeatherInfo.pending, state => {
-        state.error = '';
         state.loading = true;
+        state.error = '';
       })
       ///////////
       .addCase(addNewLocation.fulfilled, (state, { payload }) => {
