@@ -48,7 +48,7 @@ export const WeatherCard = memo(function ({
   };
 
   return (
-    <Card sx={{ minWidth: 150 }}>
+    <Card sx={{ width: 250 }}>
       <CardContent>
         <Stack direction={'row'} justifyContent="space-between">
           <Typography
@@ -99,7 +99,7 @@ export const WeatherCard = memo(function ({
               }}
             >
               <img src={windSpeedIcon} alt={'wind-speed-icon'} width={25} height={25} />
-              <Typography variant="body2" color="text.secondary">
+              <Typography fontSize={10} color="text.secondary">
                 Wind {windSpeed} m/s
               </Typography>
             </Box>
@@ -112,7 +112,7 @@ export const WeatherCard = memo(function ({
               }}
             >
               <img src={humidityIcon} alt={'humidity-icon'} width={25} height={25} />
-              <Typography variant="body2" color="text.secondary">
+              <Typography fontSize={10} color="text.secondary">
                 Humidity {humidity} %
               </Typography>
             </Box>

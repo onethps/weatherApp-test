@@ -24,10 +24,12 @@ export const Home = () => {
         justifyContent="center"
         alignItems={'center'}
       >
-        <Box sx={{ display: 'flex', gap: 3, py: 2 }}>
-          <SearchSection />
-        </Box>
-        <Grid container justifyContent={'center'} spacing={4}>
+        <SearchSection />
+        <Grid
+          container
+          sx={{ justifyContent: { lg: 'flex-start', xs: 'center' } }}
+          spacing={4}
+        >
           {cityList.map(({ name, main, weather, dt, wind }) => (
             <Grid data-testid="city-item" key={name} item>
               <WeatherCard

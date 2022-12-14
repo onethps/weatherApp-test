@@ -1,6 +1,13 @@
 import SearchIcon from '@mui/icons-material/Search';
-import LoadingButton from '@mui/lab/LoadingButton';
-import { Alert, Box, Snackbar, TextField, Typography } from '@mui/material';
+import {
+  Alert,
+  Box,
+  Button,
+  IconButton,
+  Snackbar,
+  TextField,
+  Typography,
+} from '@mui/material';
 import React, { useState } from 'react';
 
 import { useAppDispatch, useAppSelector } from '../hooks';
@@ -48,26 +55,29 @@ export const SearchSection = () => {
   };
 
   return (
-    <Box sx={{ display: 'flex', alignItems: 'stretch', gap: 3 }}>
+    <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'stretch',
+        gap: 3,
+        width: { xs: '70%', md: '50%' },
+      }}
+    >
       <TextField
+        fullWidth
         error={error}
         value={value}
         onChange={e => handleInput(e.currentTarget.value)}
         id="outlined-search"
-        label="Search location"
+        label="Add location..."
         type="search"
+        size="small"
+        variant="standard"
       />
-      <LoadingButton
-        sx={{ my: '2px' }}
-        color="primary"
-        onClick={handleClick}
-        loading={loading}
-        loadingPosition="start"
-        startIcon={<SearchIcon />}
-        variant="contained"
-      >
-        <Typography sx={{ display: { xs: 'none', md: 'inline-block' } }}>Find</Typography>
-      </LoadingButton>
+
+      <Button variant="contained" onClick={handleClick} disabled={loading}>
+        <SearchIcon />
+      </Button>
 
       <Snackbar open={error} autoHideDuration={6000} onClose={handleClose}>
         <Alert severity="error" onClose={handleClose} sx={{ width: '100%' }}>
