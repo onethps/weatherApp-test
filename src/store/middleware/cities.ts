@@ -4,7 +4,16 @@ import axios, { AxiosError } from 'axios';
 import { weatherAPI } from '../../services';
 import { CityListState } from './../slices/cities';
 
-const initCityList = ['Lviv', 'Kyiv', 'Kharkov'];
+const initCityList = [
+  'Lviv',
+  'Kyiv',
+  'Kharkov',
+  'Paris',
+  'Barcelona',
+  'Tokyo',
+  'Dubai',
+  'Seul',
+];
 
 export const fetchCitiesList = createAsyncThunk<
   CityListState[],
