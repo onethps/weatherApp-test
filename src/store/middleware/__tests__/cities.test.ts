@@ -23,6 +23,7 @@ describe('fetchCitiesList thunk', () => {
     const thunk = fetchCitiesList();
     const dispatch = jest.fn();
 
+    // eslint-disable-next-line @typescript-eslint/no-empty-function
     await thunk(dispatch, () => {}, undefined);
 
     const { calls } = dispatch.mock;

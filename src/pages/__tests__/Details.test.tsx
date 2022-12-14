@@ -1,11 +1,8 @@
-import { act, findByTestId, findByText, getByText } from '@testing-library/react';
+import { findByTestId } from '@testing-library/react';
 import React from 'react';
 import * as reactRedux from 'react-redux';
-import storage from 'redux-persist/lib/storage';
 
 import { mockDetailsData } from '../../mock/mockResponse';
-import { setupStore } from '../../store';
-import { getDetailsForecastData } from '../../store/middleware';
 import { renderWithProviders } from '../../utils/test-utils';
 import { Details } from '../Details';
 
@@ -23,8 +20,8 @@ describe('<Details />', () => {
     jest.spyOn(reactRedux, 'useSelector').mockReturnValueOnce(mockDetailsData);
     const { findByText } = renderWithProviders(<Details />);
 
-    const findRoute = await findByText('Kyiv');
-    expect(findRoute).toBeInTheDocument();
+    const element = await findByText('Kyiv');
+    expect(element).toBeInTheDocument();
   });
 
   it('showing loader on loading data', async () => {
@@ -34,7 +31,8 @@ describe('<Details />', () => {
       .mockReturnValueOnce(mockDetailsData);
     const { container } = renderWithProviders(<Details />);
     jest.spyOn(reactRedux, 'useSelector').mockReturnValue({});
-    const findRoute = await findByTestId(container, 'loader-element');
-    expect(findRoute).toBeInTheDocument();
+
+    const element = await findByTestId(container, 'loader-element');
+    expect(element).toBeInTheDocument();
   });
 });
