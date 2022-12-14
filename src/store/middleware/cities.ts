@@ -6,8 +6,6 @@ import { CityListState } from './../slices/cities';
 
 const initCityList = ['Lviv', 'Kyiv', 'Kharkov'];
 
-///TODO:FIX REJECT
-
 export const fetchCitiesList = createAsyncThunk<
   CityListState[],
   void,

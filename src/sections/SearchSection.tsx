@@ -29,12 +29,14 @@ export const SearchSection = () => {
       setError(true);
       return;
     }
+
     if (checkDuplicates(cityList, value)) {
       dispatch(setErrorMessage('City Already Exist'));
       return;
     }
 
     dispatch(addNewLocation({ name: value }));
+    setValue('');
   };
 
   const handleClose = (event: React.SyntheticEvent | Event, reason?: string) => {
