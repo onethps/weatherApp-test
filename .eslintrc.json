@@ -6,9 +6,16 @@
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "plugin:prettier/recommended"
     ],
     "overrides": [
+        {
+            "files": ["**/*.{ts,tsx,js,jsx}"],
+            "rules": {
+                "react/react-in-jsx-scope": ["off"]
+            }
+        }
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -17,8 +24,15 @@
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "prettier",
+        "simple-import-sort"
     ],
     "rules": {
+        "prettier/prettier": "error",
+        "arrow-body-style": "off",
+        "prefer-arrow-callback": "off",
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error"
     }
 }

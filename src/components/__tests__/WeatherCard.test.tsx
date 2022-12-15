@@ -1,5 +1,4 @@
 import userEvent from '@testing-library/user-event';
-import React from 'react';
 import * as reactRedux from 'react-redux';
 
 import { renderWithProviders } from '../../utils/test-utils';
@@ -22,6 +21,9 @@ describe('<WeatherCard/>', () => {
       name: 'Kyiv',
       temp: 50,
       imgSlug: '/kyiv-details',
+      date: 12345648,
+      windSpeed: 5,
+      humidity: 90,
     };
     const { getByTestId } = renderWithProviders(<WeatherCard {...props} />);
     const findButton = getByTestId('remove-button');
@@ -37,7 +39,11 @@ describe('<WeatherCard/>', () => {
       name: 'Kyiv',
       temp: 50,
       imgSlug: '/kyiv-details',
+      date: 12345648,
+      windSpeed: 5,
+      humidity: 90,
     };
+
     const { getByTestId } = renderWithProviders(<WeatherCard {...props} />);
     const findButton = getByTestId('update-button');
 
@@ -56,6 +62,9 @@ describe('<WeatherCard/>', () => {
       name: 'Kyiv',
       temp: 50,
       imgSlug: '/kyiv-details',
+      date: 12345648,
+      windSpeed: 5,
+      humidity: 90,
     };
     const { getByTestId } = renderWithProviders(<WeatherCard {...props} />);
     const findButton = getByTestId('navigate-details');

@@ -48,14 +48,6 @@ export const Details = () => {
     );
   }
 
-  if (!currentCity) {
-    return (
-      <Container>
-        <Typography variant="h1">Oops Card Details not find</Typography>
-      </Container>
-    );
-  }
-
   return (
     <Container data-testid="details-component">
       <Box
@@ -94,10 +86,9 @@ export const Details = () => {
               height={100}
               src={`${href + currentCity.list[0].weather[0].icon}@2x.png`}
             />
-
             <Typography variant="h3">
               {Math.ceil(currentCity.list[0].main.temp)}&deg;
-            </Typography>
+            </Typography>{' '}
             <Typography sx={{ fontSize: 14 }} color="text.secondary">
               {dayjs(new Date()).format('dddd, HH:mm')}
             </Typography>

@@ -1,4 +1,4 @@
-import { CssBaseline, ThemeProvider, createTheme } from '@mui/material';
+import { createTheme, CssBaseline, ThemeProvider } from '@mui/material';
 import { grey } from '@mui/material/colors';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
