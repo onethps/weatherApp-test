@@ -48,6 +48,10 @@ export const Details = () => {
     );
   }
 
+  if (!currentCity) {
+    return <div>loading</div>;
+  }
+
   return (
     <Container data-testid="details-component">
       <Box
